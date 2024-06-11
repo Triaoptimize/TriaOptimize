@@ -5,7 +5,7 @@
 
 ## Objetivo General.
 Diseño e implementación de un sistema integral para la gestión de los procesos de facturación, pedidos y órdenes de pedido en la empresa TRIÜ.
-## Objetivos Espesifico.
+## Objetivos Especifico.
 * Realizar un análisis de los procesos actuales de facturación, gestión de pedidos y seguimiento de órdenes de pedidos para identificar posibles puntos de mejora.
 * Diseñar y desarrollar una plataforma de software personalizada que integre los procesos de facturación, gestión de pedidos y seguimiento de órdenes de pedidos.
 * Capacitar al personal de la Empresa TRIÜ en el uso adecuado del nuevo sistema de gestión.
