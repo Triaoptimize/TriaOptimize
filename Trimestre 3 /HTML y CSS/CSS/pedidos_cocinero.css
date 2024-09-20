@@ -1,0 +1,208 @@
+* {
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+}
+
+body {
+    font-family: nunito;
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/fondoclaro.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: #000;
+}
+
+.container {
+    width: 100%;
+    margin: 0;
+}
+
+img {
+    margin-left: 50px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 20px 10px;
+    color: #fff;
+}
+
+.header nav a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.content h1 {
+    margin-left: 8%;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.search {
+    width: 50%;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    margin-left: 25%;
+}
+
+.tabla {
+    background-color: #fff;
+    width: 90%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-left: 6%;
+}
+
+.tabla th,
+.tabla td {
+    padding: 20px;
+    border: 1px solid #000;
+    font-size: 18px;
+    text-align: center;
+}
+
+.tabla td input {
+    width: 50%;
+    padding: 3px;
+    font-size: 18px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.no {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #FFCC00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.no a {
+    text-decoration: none;
+    color: black;
+}
+
+.no:hover {
+    background-color: #E6B800;
+}
+
+.ola {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ola a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.ola:hover {
+    background-color: #333;
+}
+
+/*Ventana emergente*/
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.pedido {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.ped {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.contenido {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.descripcion {
+    flex: 1;
+    margin-right: 50px;
+}
+
+.precio {
+    flex-shrink: 0;
+    text-align: right;
+    margin-left: 10px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+@media (max-width:720px) {
+    .header nav a {
+        margin: 0 10px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 26px;
+        margin-left: 10px;
+        margin-right: 70px;
+    }
+
+    .content h1 {
+        margin-top: 20%;
+        margin-left: 8%;
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .tabla {
+        background-color: #fff;
+        width: 90%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        margin-left: 2%;
+    }
+}
