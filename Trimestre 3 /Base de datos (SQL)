@@ -1,1 +1,165 @@
+create database triu1;
+use triu1;
 
+drop table roles;
+CREATE TABLE roles(
+id_rol int(11) NOT NULL,
+Rol varchar(45) NOT NULL,
+primary key(id_rol)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO roles(id_rol, Rol) VALUES
+(1, 'Jefe'),
+(2, 'Mesero'),
+(3, 'Cocinero');
+
+drop table usuarios;
+CREATE TABLE IF NOT EXISTS usuarios ( 
+id_usu int(10) NOT NULL,
+nombres varchar(100) NOT NULL,
+apellidos varchar(100) NOT NULL, 
+correo varchar(50) NOT NULL, 
+pass varchar(255) NOT NULL,
+rol int(11) NOT NULL, 
+PRIMARY KEY (id_usu),
+foreign key (rol) references roles(id_rol))
+ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+drop table categoria_platillos;
+CREATE TABLE categoria_platillos(
+  id_cat int(11) NOT NULL auto_increment,
+  Nombre varchar(45) NOT NULL,
+  primary key(id_cat)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO categoria_platillos(Nombre) VALUES
+('Papas'),
+('Para compartir'),
+('Ensaladas'),
+('Sopa'),
+('Sandwich'),
+('Ligeros');
+
+drop table platillos;
+CREATE TABLE platillos(
+  id_plat int(11) NOT NULL auto_increment,
+  nombre varchar(60) NOT NULL,
+  precio decimal(10,2) NOT NULL,
+  descripcion varchar(100) NOT NULL,
+  id_categoria int(11) NOT NULL,
+  primary key (id_plat),
+  foreign key (id_categoria) references categoria_platillos(id_cat)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+drop table pedido;
+CREATE TABLE pedido(
+  id_pedido int(11) NOT NULL auto_increment,
+  fecha date NOT NULL,
+  total decimal(10,2) NOT NULL,
+  id_mesero int(10) NOT NULL,
+  primary key (id_pedido),
+  foreign key (id_mesero) references usuarios(id_usu)) 
+  ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  
+
+  
+drop table pedido_has_platillo;
+CREATE TABLE pedido_has_platillo(
+id_pedido INT(11) NOT NULL,
+id_plat INT(11) NOT NULL,
+cantidad INT NOT NULL DEFAULT 1,
+PRIMARY KEY (id_pedido, id_plat),
+FOREIGN KEY (id_pedido) REFERENCES pedido(id_pedido) ON DELETE CASCADE,
+FOREIGN KEY (id_plat) REFERENCES platillos(id_plat) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  
+INSERT INTO pedido_has_platillo(id_pedido,id_plat,cantidad) values
+(1, 1, 1),
+(1, 2, 1),
+(2, 4, 1),
+(2, 5, 1),
+(3, 9, 1),
+(3, 10, 1),
+(4, 6, 1),
+(4, 7, 1),
+(5, 8, 1),
+(5, 9, 1),
+(5, 10, 1),
+(6, 7, 1),
+(7, 10, 2);
+
+drop table categoria_productos;
+CREATE TABLE categoria_productos(
+id_cat int(11) NOT NULL auto_increment,
+Nombre varchar(45) NOT NULL,
+primary key (id_cat)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO categoria_productos(Nombre) VALUES
+('Carnes'),
+('Quesos'),
+('Vinos'),
+('Verduras'),
+('Harinas');
+
+drop table producto;
+CREATE TABLE producto(
+id_producto int(11) NOT NULL auto_increment,
+Nombre varchar(45) NOT NULL,
+Categoria int(11) DEFAULT NULL,
+Stock int(11) NOT NULL,
+primary key (id_producto),
+foreign key(Categoria) references categoria_productos(id_cat)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+drop table proveedor;
+CREATE TABLE proveedor(
+id_proveedor int(11) NOT NULL auto_increment,
+Nombre varchar(100) NOT NULL,
+Correo varchar(100) NOT NULL,
+Celular varchar(15) NOT NULL,
+id_producto int(11) NOT NULL,
+primary key(id_proveedor),
+foreign key(id_producto) references producto(id_producto)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+drop table factura_compra;
+CREATE TABLE factura_compra(
+id_factura int(11) NOT NULL auto_increment,
+Nombre varchar(100) NOT NULL,
+Correo varchar(100) NOT NULL,
+Celular varchar(15) NOT NULL,
+Descripcion varchar(255) NOT NULL,
+Valor decimal(10,2) NOT NULL,
+primary key(id_factura)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+drop table factura_venta;
+CREATE TABLE factura_venta(
+id_factura int(11) NOT NULL auto_increment,
+Nombre varchar(100) NOT NULL,
+Celular varchar(15) NOT NULL,
+Descripcion varchar(255) NOT NULL,
+Valor decimal(10,2) NOT NULL,
+id_pedido int(11) NOT NULL,
+primary key(id_factura),
+foreign key(id_pedido) references pedido(id_pedido)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+drop table factura_producto;
+CREATE TABLE factura_producto(
+id_producto int(11) NOT NULL,
+id_factura int(11) NOT NULL,
+primary key(id_producto, id_factura),
+foreign key(id_producto) references producto(id_producto),
+foreign key(id_factura) references factura_compra(id_factura)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
