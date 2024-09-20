@@ -1,0 +1,49 @@
+<?php
+include("conexion.php");
+include("CategoriaP_tabla.php");
+
+$pagina = $_GET['pag']
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estiles.css?v=?">
+    <title>Categoria_Reg</title>
+</head>
+<body>
+    <div class="caja_popup2">
+        <form class="contenedor_poup" method="POST">
+            <table>
+                <tr>
+                    <th colspan="2">Agregar Productos</th>
+                </tr>
+                <tr>
+                    <td><b>Nombre: </b></td>
+                    <td><input type="text" name="txtnom" autocomplete="off" class="CajaTexto"></td>
+                </tr>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    <?php echo "<a class='BotonesTeam' href=\"CategoriaP_tabla.php?pag=$pagina\">Cancelar</a>";?>&nbsp;
+                        <input class="BotonesTeam" type="submit" name="btnregistrar" value="Registrar" onClick="javascript: return confirm('Deseas registrar este producto');">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
+
+<?php
+if(isset($_POST['btnregistrar'])){
+    $pronom = $_POST['txtnom'];
+
+    mysqli_query($conn, "INSERT INTO categoria_productos (Nombre) VALUES ('$pronom')");
+
+    echo "<script> alert('Producto registrado con exito: $pronom'); window.Location='CategoriaP_tabla.php' </script>";
+}
+?>
