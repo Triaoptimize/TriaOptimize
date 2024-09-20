@@ -1,0 +1,164 @@
+
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+body {
+    margin: 0;
+    font-family: nunito;
+  
+    background-image: url('../img/fondoclaro.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.container {
+    margin-left: 37%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.container h1{
+    text-align: center;
+}
+
+.container .espacio{
+    text-align: center;
+    text-decoration: solid;
+}
+
+img{
+    margin-left: 60px;
+    margin-top: 20px;
+}
+
+.pedido {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.ped {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.contenido {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.descripcion {
+    flex: 1;
+}
+
+.precio {
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.agregar {
+    display: block;
+    margin-top: 5px;
+    color: #0000EE;
+    text-decoration: none;
+}
+
+.agregar:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.boton_crear {
+    width: 100%;
+    padding: 10px;
+    background-color: #FFCC00;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.boton_crear:hover {
+    background-color: #E6B800;
+}
+
+/*Ventana emergente*/
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+button {
+    display: grid;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 20%;
+    padding: 10px;
+    background-color: #FFCC00;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button a{
+    text-decoration: none;
+    color: black;
+}
+
+button:hover {
+    background-color: #E6B800;
+}
+
+@media (max-width:720px){
+    .container {
+        margin-top: 34%;
+        margin-left: 25%;
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        width: 300px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        position: relative;
+    }
+
+    img{
+        margin-left: 60px;
+        margin-top: 12%;
+    }
+}
