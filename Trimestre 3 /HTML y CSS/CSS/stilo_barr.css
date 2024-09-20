@@ -1,0 +1,63 @@
+.BarraLateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    height: 90px; /* Altura fija */
+    background-color: #333333;
+    box-sizing: border-box;
+    text-align: right; /* Para alinear hacia la derecha */
+    padding-right: 20px; /* Espacio a la derecha */
+    z-index: 9999; /* Para asegurarte que esté encima del contenido */
+}
+
+.BarraLateral ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1px;
+    display: inline-flex; /* Para alinear los items horizontalmente */
+}
+
+.BarraLateral li {
+    margin-top: 10px;
+    text-align: left;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, .5);
+    color: #d9dbe0;
+    margin-left: 10px; /* Espacio entre los items */
+}
+
+.BarraLateral a {
+    color: white;
+    text-decoration: none;
+}
+
+
+.ContenidoIzquierda {
+    width: 70%; /* Ajusta el ancho según lo que necesites */
+    text-align: left;
+}
+
+.ContenidoDerecha {
+    width: 30%; /* Ajusta el ancho según lo que necesites */
+    text-align: right;
+}
+img {
+    float: left; /* Alinea la imagen a la izquierda */
+    margin-left: 2px;
+    width: 88px;
+    border-radius: 60px;
+}
+
+
+@media (max-width: 768px) {
+    .BarraLateral {
+        height: auto;
+        position: relative;
+    }
+
+    .ContenedorPrincipal {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        margin-top: 0;
+    }
+}
