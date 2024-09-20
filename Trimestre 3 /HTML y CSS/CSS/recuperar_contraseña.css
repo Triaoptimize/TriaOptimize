@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
+}
+
+body {
+    background-image: url(../img/Recuperar.png);
+    background-size: cover;
+}
+
+.Cuadro {
+    background: white;
+    margin: 20px;
+    padding: 30px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 12%;
+    border-radius: 30px;
+    border: 3px solid black;
+
+
+}
+
+.Cuadro p {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin: 20px;
+}
+
+.Cuadro h1 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin: 20px;
+}
+
+.email {
+    background-color: rgba(228, 194, 0, 0.342);
+    padding: 10px;
+    width: 80%;
+    border: 2px solid rgb(5, 0, 77);
+    border-radius: 10px;
+    margin: 20px;
+    margin-left: 90px;
+}
+
+button {
+    background: #ffbb00;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-left: 95%;
+    margin-bottom: 50px;
+    margin-top: -170px;
+    border: 3px solid black;
+}
