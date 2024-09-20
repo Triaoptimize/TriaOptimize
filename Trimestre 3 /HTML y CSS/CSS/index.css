@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
+    font-size: 20px;
+
+}
+
+body {
+    background-color: black;
+    flex-wrap: wrap;
+}
+
+header {
+    background-image: url(../img/Index.png);
+    width: 100%;
+    height: 180px;
+}
+
+header img {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    margin-left: 47%;
+    margin-top: 10px;
+}
+
+header h1 {
+    color: rgb(255, 255, 255);
+
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    letter-spacing: 10%;
+    text-shadow:
+        2px 2px 0px black,
+        /* Sombra hacia abajo-derecha */
+        -2px 2px 0px black,
+        /* Sombra hacia abajo-izquierda */
+        2px -2px 0px black,
+        -2px -2px 0px black;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.navbar {
+    background-color: #f3a200;
+    margin: 10px;
+    border-radius: 10px;
+
+
+}
+
+.navbar ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 20px;
+    padding-left: 22%;
+    list-style: none;
+
+}
+
+.navbar a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    background-color: rgb(0, 32, 73);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.galeria img {
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    opacity: 0;
+    animation: slide 9s infinite;
+    padding: 50px;
+    padding-left: 10%;
+}
+
+
+.galeria img:nth-child(1) {
+    animation-delay: 4s;
+}
+
+.galeria img:nth-child(2) {
+    animation-delay: 6s;
+}
+
+.galeria img:nth-child(3) {
+    animation-delay: 4s;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 1;
+    }
+
+    43% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+.Informacion {
+
+    margin: 10px;
+    height: 1000px;
+}
+
+.Informacion #info h1 {
+
+    padding-top: 60px;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #e2b900;
+    text-align: center;
+    letter-spacing: 5px;
+
+}
+
+.Informacion #info p {
+    padding: 20px;
+    padding-left: 10%;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    line-height: 1.5rem;
+    text-align: center;
+}
+
+iframe {
+    padding-left: 100px;
+
+}
+
+footer {
+    background-color: black;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+iframe {
+    margin-top: 40px;
+    background-color: #e2b900;
+    margin-left: 25%;
+}
+
+.direc img {
+    margin-left: 120px;
+}
+
+.direc h1 {
+    letter-spacing: 5px;
+    color: #e2b900;
+    margin: 8px;
+    margin-left: 18%;
+    font-size: 30px;
+}
+
+.direc p {
+    color: #ffffff;
+    background-color: rgb(0, 32, 73);
+    font-size: 15px;
+    margin-left: 10%;
+    margin-right: 40%;
+    padding: 30px;
+
+}
+
+.menus {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.menus h2 {
+    background-color: #ffe15e28;
+    font-size: 30px;
+    color: #ffffff;
+    margin: 25%;
+    margin-top: 80px;
+    padding: 40PX;
+    text-align: center;
+    letter-spacing: 5px;
+    border-radius: 10%;
+}
+
+.menus img {
+    margin: 10px;
+    border-radius: 30%;
+    margin-left: 30%;
+}
+
+footer {
+    margin-top: 20px;
+    background-color: rgb(0, 32, 73);
+    padding: 20px;
+}
+
+footer h1 {
+    font-family: "New Amsterdam", sans-serif;
+    margin-top: 40px;
+    color: rgb(255, 255, 255);
+    padding-left: 50px;
+    height: 70px;
+    font-size: 60px;
+    letter-spacing: 5px;
+}
+
+footer img {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    margin-left: -50px;
+    margin-top: 20px;
+}
+
+.navbar .botonn:hover {
+    background-color: aliceblue;
+    color: rgb(0, 0, 78);
+}
+
+.navbar .botonn {
+    background: #0b003a;
+    color: rgb(255, 255, 255);
+    padding: 6px;
+    border-radius: 10px;
+}
